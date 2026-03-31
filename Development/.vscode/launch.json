@@ -1,5 +1,17 @@
 {
     "version": "0.2.0",
     "configurations": [
+         {
+            "name": "Development",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "MIIDemoAU",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "1cf4bf18-deb5-4942-8d71-5ffd8e0d3d4e"
+        }
     ]
 }
