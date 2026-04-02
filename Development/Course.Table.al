@@ -58,6 +58,13 @@ table 70000 CRONUSCourse
             Caption = 'Instructor Code';
             TableRelation = Resource where(Type = const(Person));
         }
+        field(120; InstructorName; Text[50])
+        {
+            Caption = 'Instructor Name';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup(Resource.Name where("No." = field("InstructorCode")));
+        }
     }
 
     keys
