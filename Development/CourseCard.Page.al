@@ -44,7 +44,7 @@ page 70101 "CRONUS Course Card"
                 {
                     ApplicationArea = All;
                 }
-                field(InstructorName; Rec.InstructorCode)
+                field(InstructorName; Rec.InstructorName)
                 {
                     ApplicationArea = All;
                 }

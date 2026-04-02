@@ -30,7 +30,7 @@ page 70100 MyPage
                 {
                     ApplicationArea = All;
                 }
-                field(InstructorName; Rec.InstructorCode)
+                field(InstructorName; Rec.InstructorName)
                 {
                     ApplicationArea = All;
                 }
