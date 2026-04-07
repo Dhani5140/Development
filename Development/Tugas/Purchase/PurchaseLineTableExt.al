@@ -14,22 +14,22 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
         }
         field(70002; QtytoReceive2; Decimal)
         {
-            Caption = 'Qty to Receive 2';
+            Caption = 'Qty. to Receive 2';
             DataClassification = ToBeClassified;
         }
         field(70003; QtyReceived2; Decimal)
         {
-            Caption = 'Qty Received 2';
+            Caption = 'Qty. Received 2';
             DataClassification = ToBeClassified;
         }
         field(70004; QtyToInvoice2; Decimal)
         {
-            Caption = 'Qty to Invoice 2';
+            Caption = 'Qty. to Invoice 2';
             DataClassification = ToBeClassified;
         }
         field(70005; QtyInvoiced2; Decimal)
         {
-            Caption = 'Qty Invoiced 2';
+            Caption = 'Qty. Invoiced 2';
             DataClassification = ToBeClassified;
         }
     }
