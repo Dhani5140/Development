@@ -20,3 +20,4 @@ pageextension 70003 "Posted Purch. Inv. Page Ext" extends "Posted Purch. Invoice
         }
     }
 }
+// tes
