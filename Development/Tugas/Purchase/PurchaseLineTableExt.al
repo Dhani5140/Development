@@ -6,31 +6,37 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
         {
             Caption = 'Quantity 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70001; UnitofMeasureCode2; Code[10])
         {
             DataClassification = ToBeClassified;
             Caption = 'Unit of Measure Code 2';
+            TableRelation = "Unit of Measure";
         }
         field(70002; QtytoReceive2; Decimal)
         {
             Caption = 'Qty. to Receive 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70003; QtyReceived2; Decimal)
         {
             Caption = 'Qty. Received 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70004; QtyToInvoice2; Decimal)
         {
             Caption = 'Qty. to Invoice 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70005; QtyInvoiced2; Decimal)
         {
             Caption = 'Qty. Invoiced 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
     }
 }
