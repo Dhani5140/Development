@@ -1,4 +1,4 @@
-tableextension 70005 "Sales Inv. Line Table Ext" extends "Sales Invoice Line"
+tableextension 70006 "Sales Inv. Line Table Ext" extends "Sales Invoice Line"
 {
     fields
     {

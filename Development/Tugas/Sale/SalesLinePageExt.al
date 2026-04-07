@@ -18,20 +18,20 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
                 Caption = 'Unit of Measure Code 2';
             }
         }
-        addafter("Qty. to Receive")
+        addafter("Qty. to Ship")
         {
-            field(QtytoReceive2; Rec.QtytoReceive2)
+            field(QtytoShip2; Rec.QtytoShip2)
             {
                 ApplicationArea = All;
-                Caption = 'Qty. to Receive 2';
+                Caption = 'Qty. to Ship 2';
             }
         }
-        addafter("Qty. Received")
+        addafter("Quantity Shipped")
         {
-            field(QtyReceived2; Rec.QtyReceived2)
+            field(QtyShipped2; Rec.QtyShipped2)
             {
                 ApplicationArea = All;
-                Caption = 'Qty. Received 2';
+                Caption = 'Qty. Shipped 2';
             }
         }
         addafter("Qty. to Invoice")
@@ -42,7 +42,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
                 Caption = 'Qty. to Invoice 2';
             }
         }
-        addafter("Qty. Invoiced")
+        addafter("Quantity Invoiced")
         {
             field(QtyInvoiced2; Rec.QtyInvoiced2)
             {

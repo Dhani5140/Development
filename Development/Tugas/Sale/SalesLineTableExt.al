@@ -12,14 +12,14 @@ tableextension 70004 "Sales Line Table Ext" extends "Sales Line"
             DataClassification = ToBeClassified;
             Caption = 'Unit of Measure Code 2';
         }
-        field(70002; QtytoReceive2; Decimal)
+        field(70002; QtytoShip2; Decimal)
         {
-            Caption = 'Qty. to Receive 2';
+            Caption = 'Qty. to Ship 2';
             DataClassification = ToBeClassified;
         }
-        field(70003; QtyReceived2; Decimal)
+        field(70003; QtyShipped2; Decimal)
         {
-            Caption = 'Qty. Received 2';
+            Caption = 'Qty. Shipped 2';
             DataClassification = ToBeClassified;
         }
         field(70004; QtyToInvoice2; Decimal)

@@ -26,7 +26,7 @@ pageextension 70005 "Posted Sales Shpt. Page Ext" extends "Posted Sales Shpt. Su
                 Caption = 'Qty. Shipped Not Invoiced 2';
             }
         }
-        addafter("Qty. Invoiced")
+        addafter("Quantity Invoiced")
         {
             field(QtyInvoiced2; Rec.QtyInvoiced2)
             {
