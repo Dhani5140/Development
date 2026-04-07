@@ -2,7 +2,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
 {
     layout
     {
-        addlast()
+        addlast(General)
         {
             field(Quantity2; Rec.Quantity2)
             {
