@@ -4,7 +4,7 @@ pageextension 70001 "Posted Purchase Rcpt. Page Ext" extends "Posted Purchase Rc
     {
         addafter("Quantity")
         {
-            field(Quantity2; Rec.Quantity2)
+            field("Quantity 2"; Rec."Quantity 2")
             {
                 ApplicationArea = All;
                 Caption = 'Quantity 2';
@@ -12,7 +12,7 @@ pageextension 70001 "Posted Purchase Rcpt. Page Ext" extends "Posted Purchase Rc
         }
         addafter("Unit of Measure Code")
         {
-            field(UnitofMeasureCode2; Rec.UnitofMeasureCode2)
+            field("Unit of Measure Code 2"; Rec."Unit of Measure Code 2")
             {
                 ApplicationArea = All;
                 Caption = 'Unit of Measure Code 2';
@@ -20,7 +20,7 @@ pageextension 70001 "Posted Purchase Rcpt. Page Ext" extends "Posted Purchase Rc
         }
         addafter("Qty. Rcd. Not Invoiced")
         {
-            field(QtyReceivedNotInvoiced2; Rec.QtyReceivedNotInvoiced2)
+            field("Qty. Rcd. Not Invoiced 2"; Rec."Qty. Rcd. Not Invoiced 2")
             {
                 ApplicationArea = All;
                 Caption = 'Qty. Rcd. Not Invoiced 2';
@@ -28,7 +28,7 @@ pageextension 70001 "Posted Purchase Rcpt. Page Ext" extends "Posted Purchase Rc
         }
         addafter("Quantity Invoiced")
         {
-            field(QtyInvoiced2; Rec.QtyInvoiced2)
+            field("Qty. Invoiced 2"; Rec."Qty. Invoiced 2")
             {
                 ApplicationArea = All;
                 Caption = 'Qty. Invoiced 2';

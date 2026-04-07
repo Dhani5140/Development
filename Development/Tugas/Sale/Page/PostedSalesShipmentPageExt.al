@@ -4,7 +4,7 @@ pageextension 70005 "Posted Sales Shpt. Page Ext" extends "Posted Sales Shpt. Su
     {
         addafter("Quantity")
         {
-            field(Quantity2; Rec.Quantity2)
+            field("Quantity 2"; Rec."Quantity 2")
             {
                 ApplicationArea = All;
                 Caption = 'Quantity 2';
@@ -12,7 +12,7 @@ pageextension 70005 "Posted Sales Shpt. Page Ext" extends "Posted Sales Shpt. Su
         }
         addafter("Unit of Measure Code")
         {
-            field(UnitofMeasureCode2; Rec.UnitofMeasureCode2)
+            field("Unit of Measure Code 2"; Rec."Unit of Measure Code 2")
             {
                 ApplicationArea = All;
                 Caption = 'Unit of Measure Code 2';
@@ -20,7 +20,7 @@ pageextension 70005 "Posted Sales Shpt. Page Ext" extends "Posted Sales Shpt. Su
         }
         addafter("Qty. Shipped Not Invoiced")
         {
-            field(QtyShippedNotInvoiced2; Rec.QtyShippedNotInvoiced2)
+            field("Qty. Shipped Not Invoiced 2"; Rec."Qty. Shipped Not Invoiced 2")
             {
                 ApplicationArea = All;
                 Caption = 'Qty. Shipped Not Invoiced 2';
@@ -28,7 +28,7 @@ pageextension 70005 "Posted Sales Shpt. Page Ext" extends "Posted Sales Shpt. Su
         }
         addafter("Quantity Invoiced")
         {
-            field(QtyInvoiced2; Rec.QtyInvoiced2)
+            field("Quantity Invoiced 2"; Rec."Quantity Invoiced 2")
             {
                 ApplicationArea = All;
                 Caption = 'Qty. Invoiced 2';

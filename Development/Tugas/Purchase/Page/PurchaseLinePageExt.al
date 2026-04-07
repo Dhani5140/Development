@@ -1,10 +1,10 @@
-pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
+pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
 {
     layout
     {
         addafter("Quantity")
         {
-            field(Quantity2; Rec.Quantity2)
+            field("Quantity 2"; Rec."Quantity 2")
             {
                 ApplicationArea = All;
                 Caption = 'Quantity 2';
@@ -12,31 +12,31 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
         }
         addafter("Unit of Measure Code")
         {
-            field(UnitofMeasureCode2; Rec.UnitofMeasureCode2)
+            field("Unit of Measure Code 2"; Rec."Unit of Measure Code 2")
             {
                 ApplicationArea = All;
                 Caption = 'Unit of Measure Code 2';
             }
         }
-        addafter("Qty. to Ship")
+        addafter("Qty. to Receive")
         {
-            field(QtytoShip2; Rec.QtytoShip2)
+            field("Qty. to Receive 2"; Rec."Qty. to Receive 2")
             {
                 ApplicationArea = All;
-                Caption = 'Qty. to Ship 2';
+                Caption = 'Qty. to Receive 2';
             }
         }
-        addafter("Quantity Shipped")
+        addafter("Quantity Received")
         {
-            field(QtyShipped2; Rec.QtyShipped2)
+            field("Quantity Received 2"; Rec."Quantity Received 2")
             {
                 ApplicationArea = All;
-                Caption = 'Qty. Shipped 2';
+                Caption = 'Quantity Received 2';
             }
         }
         addafter("Qty. to Invoice")
         {
-            field(QtytoInvoice2; Rec.QtytoInvoice2)
+            field("Qty. to Invoice 2"; Rec."Qty. to Invoice 2")
             {
                 ApplicationArea = All;
                 Caption = 'Qty. to Invoice 2';
@@ -44,10 +44,10 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
         }
         addafter("Quantity Invoiced")
         {
-            field(QtyInvoiced2; Rec.QtyInvoiced2)
+            field("Quantity Invoiced 2"; Rec."Quantity Invoiced 2")
             {
                 ApplicationArea = All;
-                Caption = 'Qty. Invoiced 2';
+                Caption = 'Quantity Invoiced 2';
             }
         }
     }

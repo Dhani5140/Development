@@ -4,7 +4,7 @@ pageextension 70003 "Posted Purch. Inv. Page Ext" extends "Posted Purch. Invoice
     {
         addafter("Quantity")
         {
-            field(Quantity2; Rec.Quantity2)
+            field("Quantity 2"; Rec."Quantity 2")
             {
                 ApplicationArea = All;
                 Caption = 'Quantity 2';
@@ -12,7 +12,7 @@ pageextension 70003 "Posted Purch. Inv. Page Ext" extends "Posted Purch. Invoice
         }
         addafter("Unit of Measure Code")
         {
-            field(UnitofMeasureCode2; Rec.UnitofMeasureCode2)
+            field("Unit of Measure Code 2"; Rec."Unit of Measure Code 2")
             {
                 ApplicationArea = All;
                 Caption = 'Unit of Measure Code 2';
