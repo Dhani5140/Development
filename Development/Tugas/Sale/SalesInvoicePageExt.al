@@ -1,4 +1,4 @@
-pageextension 70003 "Posted Purch. Inv. Page Ext" extends "Posted Purch. Invoice Subform"
+pageextension 70007 "Sales Inv. Page Ext" extends "Sales Invoice Subform"
 {
     layout
     {

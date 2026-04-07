@@ -26,7 +26,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
                 Caption = 'Qty. to Receive 2';
             }
         }
-        addafter("Qty. Received")
+        addafter("Quantity Received")
         {
             field(QtyReceived2; Rec.QtyReceived2)
             {
@@ -42,7 +42,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
                 Caption = 'Qty. to Invoice 2';
             }
         }
-        addafter("Qty. Invoiced")
+        addafter("Quantity Invoiced")
         {
             field(QtyInvoiced2; Rec.QtyInvoiced2)
             {

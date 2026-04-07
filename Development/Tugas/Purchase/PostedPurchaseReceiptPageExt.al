@@ -1,4 +1,4 @@
-pageextension 70001 "Posted Purchase Receipt Page Ext" extends "Posted Purchase Rcpt. Subform"
+pageextension 70001 "Posted Purchase Rcpt. Page Ext" extends "Posted Purchase Rcpt. Subform"
 {
     layout
     {
@@ -26,7 +26,7 @@ pageextension 70001 "Posted Purchase Receipt Page Ext" extends "Posted Purchase 
                 Caption = 'Qty. Rcd. Not Invoiced 2';
             }
         }
-        addafter("Qty. Invoiced")
+        addafter("Quantity Invoiced")
         {
             field(QtyInvoiced2; Rec.QtyInvoiced2)
             {

@@ -1,4 +1,4 @@
-pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
+pageextension 70005 "Posted Sales Shpt. Page Ext" extends "Posted Sales Shpt. Subform"
 {
     layout
     {
@@ -18,28 +18,12 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
                 Caption = 'Unit of Measure Code 2';
             }
         }
-        addafter("Qty. to Receive")
+        addafter("Qty. Shipped Not Invoiced")
         {
-            field(QtytoReceive2; Rec.QtytoReceive2)
+            field(QtyShippedNotInvoiced2; Rec.QtyShippedNotInvoiced2)
             {
                 ApplicationArea = All;
-                Caption = 'Qty. to Receive 2';
-            }
-        }
-        addafter("Qty. Received")
-        {
-            field(QtyReceived2; Rec.QtyReceived2)
-            {
-                ApplicationArea = All;
-                Caption = 'Qty. Received 2';
-            }
-        }
-        addafter("Qty. to Invoice")
-        {
-            field(QtytoInvoice2; Rec.QtytoInvoice2)
-            {
-                ApplicationArea = All;
-                Caption = 'Qty. to Invoice 2';
+                Caption = 'Qty. Shipped Not Invoiced 2';
             }
         }
         addafter("Qty. Invoiced")
