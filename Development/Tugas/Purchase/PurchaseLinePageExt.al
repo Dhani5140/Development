@@ -1,4 +1,4 @@
-pageextension 70000 "Purchase Line Page Ext" extends "Purch. Invoice Subform"
+pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
 {
     layout
     {
