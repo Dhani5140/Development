@@ -4,7 +4,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
     {
         addafter("Quantity")
         {
-            field("Quantity 2"; Rec."Quantity 2")
+            field(Quantity2; Rec.Quantity2)
             {
                 ApplicationArea = All;
                 Caption = 'Quantity 2';
@@ -12,7 +12,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
         }
         addafter("Unit of Measure Code")
         {
-            field("Unit of Measure Code 2"; Rec."Unit of Measure Code 2")
+            field(UnitofMeasureCode2; Rec.UnitofMeasureCode2)
             {
                 ApplicationArea = All;
                 Caption = 'Unit of Measure Code 2';
@@ -20,7 +20,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
         }
         addafter("Qty. to Receive")
         {
-            field("Qty. to Receive 2"; Rec."Qty. to Receive 2")
+            field(QtytoReceive2; Rec.QtytoReceive2)
             {
                 ApplicationArea = All;
                 Caption = 'Qty. to Receive 2';
@@ -28,7 +28,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
         }
         addafter("Quantity Received")
         {
-            field("Quantity Received 2"; Rec."Quantity Received 2")
+            field(QtyReceived2; Rec.QtyReceived2)
             {
                 ApplicationArea = All;
                 Caption = 'Quantity Received 2';
@@ -36,7 +36,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
         }
         addafter("Qty. to Invoice")
         {
-            field("Qty. to Invoice 2"; Rec."Qty. to Invoice 2")
+            field(QtytoInvoice2; Rec.QtytoInvoice2)
             {
                 ApplicationArea = All;
                 Caption = 'Qty. to Invoice 2';
@@ -44,7 +44,7 @@ pageextension 70000 "Purchase Line Page Ext" extends "Purchase Order Subform"
         }
         addafter("Quantity Invoiced")
         {
-            field("Quantity Invoiced 2"; Rec."Quantity Invoiced 2")
+            field(QtyInvoiced2; Rec.QtyInvoiced2)
             {
                 ApplicationArea = All;
                 Caption = 'Quantity Invoiced 2';
