@@ -15,6 +15,7 @@ codeunit 70000 PurchaseCode
     local procedure ReceiveItem_OnAfterPostUpdateOrderLine(var PurchaseLine: Record "Purchase Line"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSupressed: Boolean)
     begin
         PurchaseLine."QtyReceived2" += PurchaseLine."QtytoReceive2";
+        PurchaseLine.Modify()
     end;
 
 
