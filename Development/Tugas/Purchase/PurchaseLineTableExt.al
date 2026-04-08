@@ -25,6 +25,10 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             Caption = 'Qty. to Receive 2';
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
+            trigger OnValidate()
+            begin
+                "QtyToInvoice2" := QtytoReceive2 + QtyReceived2;
+            end;
         }
         field(70003; QtyReceived2; Decimal)
         {

@@ -11,11 +11,10 @@ codeunit 70000 PurchaseCode
         PurchaseLine."UnitofMeasureCode2" := Item."Base Unit of Measure";
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnAfterPostUpdateOrderLine', '', false, false)]
-    local procedure ReceiveItem_OnAfterPostUpdateOrderLine(var PurchaseLine: Record "Purchase Line"; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSupressed: Boolean)
+    [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforePostUpdateOrderLineModifyTempLine', '', false, false)]
+    local procedure FixQtyBeforeModify(var TempPurchaseLine: Record "Purchase Line" temporary; WhseShip: Boolean; WhseReceive: Boolean; CommitIsSuppressed: Boolean; PurchHeader: Record "Purchase Header")
     begin
-        PurchaseLine."QtyReceived2" += PurchaseLine."QtytoReceive2";
-        PurchaseLine.Modify()
+        TempPurchaseLine."QtyReceived2" += TempPurchaseLine."QtytoReceive2";
     end;
 
 
