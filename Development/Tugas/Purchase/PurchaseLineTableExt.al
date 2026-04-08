@@ -26,7 +26,7 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = Sum("Purch. Rcpt. Line"."Quantity" where("Order No." = FIELD("Order No.")));
+            CalcFormula = Sum("Purch. Rcpt. Line"."Quantity" where("Order No." = FIELD("Document No.")));
         }
         field(70004; QtyToInvoice2; Decimal)
         {
