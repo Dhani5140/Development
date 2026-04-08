@@ -8,6 +8,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Quantity 2';
+                DecimalPlaces = 0 : 5;
             }
         }
         addafter("Unit of Measure Code")
@@ -16,6 +17,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Unit of Measure Code 2';
+                TableRelation = "Unit of Measure";
             }
         }
         addafter("Qty. to Ship")
@@ -24,6 +26,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Qty. to Ship 2';
+                DecimalPlaces = 0 : 5;
             }
         }
         addafter("Quantity Shipped")
@@ -32,6 +35,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Qty. Shipped 2';
+                DecimalPlaces = 0 : 5;
             }
         }
         addafter("Qty. to Invoice")
@@ -40,6 +44,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Qty. to Invoice 2';
+                DecimalPlaces = 0 : 5;
             }
         }
         addafter("Quantity Invoiced")
@@ -48,6 +53,7 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
             {
                 ApplicationArea = All;
                 Caption = 'Qty. Invoiced 2';
+                DecimalPlaces = 0 : 5;
             }
         }
     }
