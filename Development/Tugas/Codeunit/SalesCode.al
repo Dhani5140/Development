@@ -35,7 +35,7 @@ codeunit 70001 SalesCode
         var SalesShptLine: Record "Sales Shipment Line")
     begin
         SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
-        SalesShptLine."QtyInvoiced2" := SalesLine."Quantity2";
-        SalesShptLine."QtyShippedNotInvoiced2" := SalesLine."Quantity2" - SalesLine."QtyInvoiced2";
+        SalesShptLine."QtyInvoiced2" := SalesShptLine."Quantity2";
+        SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2" - SalesShptLine."QtyInvoiced2";
     end;
 }
