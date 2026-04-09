@@ -6,6 +6,7 @@ tableextension 70006 "Sales Inv. Line Table Ext" extends "Sales Invoice Line"
         {
             Caption = 'Quantity 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70001; UnitofMeasureCode2; Code[10])
         {

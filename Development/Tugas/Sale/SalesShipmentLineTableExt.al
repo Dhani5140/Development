@@ -6,6 +6,7 @@ tableextension 70005 "Sales Shpt. Line Table Ext" extends "Sales Shipment Line"
         {
             Caption = 'Quantity 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70001; UnitofMeasureCode2; Code[10])
         {
@@ -17,11 +18,13 @@ tableextension 70005 "Sales Shpt. Line Table Ext" extends "Sales Shipment Line"
         {
             Caption = 'Qty. Shipped Not Invoiced 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
         field(70003; QtyInvoiced2; Decimal)
         {
             Caption = 'Quantity Invoiced 2';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
         }
     }
 }
