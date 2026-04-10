@@ -26,5 +26,13 @@ pageextension 70011 "GetShpt.LinesPageExt" extends "Get Shipment Lines"
                 Caption = 'Qty. Invoiced 2';
             }
         }
+        addafter("Qty. Shipped Not Invoiced")
+        {
+            field(QtyShippedNotInvoiced2; Rec.QtyShippedNotInvoiced2)
+            {
+                ApplicationArea = All;
+                Caption = 'Qty. Shipped Not Invoiced 2';
+            }
+        }
     }
 }
