@@ -39,7 +39,6 @@ codeunit 70000 PurchaseCode
         var WhseRcptLine: Record "Warehouse Receipt Line")
     begin
         PurchRcptLine."Quantity2" := PurchLine."QtytoReceive2";
-        PurchRcptLine."QtyInvoiced2" := PurchRcptLine."Quantity2";
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2" - PurchRcptLine."QtyInvoiced2";
     end;
 }
