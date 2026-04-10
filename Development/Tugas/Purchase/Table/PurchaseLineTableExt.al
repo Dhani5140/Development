@@ -51,4 +51,10 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             Editable = false;
         }
     }
+    trigger OnAfterModify()
+    var
+        myInt: Integer;
+    begin
+
+    end;
 }
