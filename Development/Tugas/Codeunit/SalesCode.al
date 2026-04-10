@@ -29,12 +29,22 @@ codeunit 70001 SalesCode
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 80, OnInsertShipmentLineOnAfterInitQuantityFields, '', false, false)]
-    local procedure MyProcedure(
+    local procedure InitiateShipmentLine(
         var SalesLine: Record "Sales Line";
         var xSalesLine: Record "Sales Line";
         var SalesShptLine: Record "Sales Shipment Line")
     begin
         SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
         SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2" - SalesShptLine."QtyInvoiced2";
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLineProcedure, '', false, false)]
+    local procedure UpdateInvoicedQtyOnPurchRcptLine(
+        var SalesShptLine: Record "Sales Shipment Line";
+        QtyToBeInvoiced: Decimal;
+        QtyToBeInvoicedBase: Decimal)
+    begin
+        SalesShptLine.QtyInvoiced2 := SalesShptLine.QtyShippedNotInvoiced2;
+        SalesShptLine.QtyShippedNotInvoiced2 := SalesShptLine."Quantity2" - SalesShptLine.QtyInvoiced2;
     end;
 }
