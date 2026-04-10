@@ -43,7 +43,8 @@ codeunit 70000 PurchaseCode
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforeUpdateInvoicedQtyOnPurchRcptLine', '', false, false)]
-    local procedure UpdateInvoicedQtyOnPurchRcptLine(var PurchRcptLine: Record "Purch. Rcpt. Line";
+    local procedure UpdateInvoicedQtyOnPurchRcptLine(
+    var PurchRcptLine: Record "Purch. Rcpt. Line";
     var QtyToBeInvoiced: Decimal;
     var QtyToBeInvoicedBase: Decimal;
     CommitIsSupressed: Boolean;
