@@ -38,15 +38,15 @@ codeunit 70001 SalesCode
         SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2" - SalesShptLine."QtyInvoiced2";
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLine, '', false, false)]
-    local procedure UpdateInvoicedQtyOnPurchRcptLine(
-    var SalesShipmentLine: Record "Sales Shipment Line";
-    SalesLine: Record "Sales Line";
-    SalesHeader: Record "Sales Header";
-    SalesInvoiceHeader: Record "Sales Invoice Header";
-    CommitIsSuppressed: Boolean)
-    begin
-        SalesShipmentLine.QtyInvoiced2 := SalesShipmentLine.QtyShippedNotInvoiced2;
-        SalesShipmentLine.QtyShippedNotInvoiced2 := SalesShipmentLine."Quantity2" - SalesShipmentLine.QtyInvoiced2;
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLine, '', false, false)]
+    // local procedure UpdateInvoicedQtyOnPurchRcptLine(
+    // var SalesShipmentLine: Record "Sales Shipment Line";
+    // SalesLine: Record "Sales Line";
+    // SalesHeader: Record "Sales Header";
+    // SalesInvoiceHeader: Record "Sales Invoice Header";
+    // CommitIsSuppressed: Boolean)
+    // begin
+    //     SalesShipmentLine.QtyInvoiced2 := SalesShipmentLine.QtyShippedNotInvoiced2;
+    //     SalesShipmentLine.QtyShippedNotInvoiced2 := SalesShipmentLine."Quantity2" - SalesShipmentLine.QtyInvoiced2;
+    // end;
 }

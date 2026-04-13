@@ -33,9 +33,12 @@ pageextension 70004 "Sales Line Page Ext" extends "Sales Order Subform"
         {
             field(QtyShipped2; Rec.QtyShipped2)
             {
+                AccessByPermission = TableData "Sales Shipment Header" = R;
                 ApplicationArea = All;
                 Caption = 'Qty. Shipped 2';
                 DecimalPlaces = 0 : 5;
+                Editable = false;
+                ToolTip = 'Specifies how many units of the item on the line have been posted as shipped.';
             }
         }
         addafter("Qty. to Invoice")
