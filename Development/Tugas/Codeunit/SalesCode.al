@@ -28,25 +28,25 @@ codeunit 70001 SalesCode
         TempSalesLine.Validate("QtytoShip2");
     end;
 
-    // [EventSubscriber(ObjectType::Codeunit, 80, OnInsertShipmentLineOnAfterInitQuantityFields, '', false, false)]
-    // local procedure InitiateShipmentLine(
-    //     var SalesLine: Record "Sales Line";
-    //     var xSalesLine: Record "Sales Line";
-    //     var SalesShptLine: Record "Sales Shipment Line")
-    // begin
-    //     SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
-    //     SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2" - SalesShptLine."QtyInvoiced2";
-    // end;
+    [EventSubscriber(ObjectType::Codeunit, 80, OnInsertShipmentLineOnAfterInitQuantityFields, '', false, false)]
+    local procedure InitiateShipmentLine(
+        var SalesLine: Record "Sales Line";
+        var xSalesLine: Record "Sales Line";
+        var SalesShptLine: Record "Sales Shipment Line")
+    begin
+        SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
+        SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2";
+    end;
 
-    // [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLine, '', false, false)]
-    // local procedure UpdateInvoicedQtyOnPurchRcptLine(
-    // var SalesShipmentLine: Record "Sales Shipment Line";
-    // SalesLine: Record "Sales Line";
-    // SalesHeader: Record "Sales Header";
-    // SalesInvoiceHeader: Record "Sales Invoice Header";
-    // CommitIsSuppressed: Boolean)
-    // begin
-    //     SalesShipmentLine.QtyInvoiced2 := SalesShipmentLine.QtyShippedNotInvoiced2;
-    //     SalesShipmentLine.QtyShippedNotInvoiced2 := SalesShipmentLine."Quantity2" - SalesShipmentLine.QtyInvoiced2;
-    // end;
+    [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLine, '', false, false)]
+    local procedure UpdateInvoicedQtyOnPurchRcptLine(
+    var SalesShipmentLine: Record "Sales Shipment Line";
+    SalesLine: Record "Sales Line";
+    SalesHeader: Record "Sales Header";
+    SalesInvoiceHeader: Record "Sales Invoice Header";
+    CommitIsSuppressed: Boolean)
+    begin
+        SalesShipmentLine.QtyInvoiced2 += SalesShipmentLine.QtyShippedNotInvoiced2;
+        SalesShipmentLine.QtyShippedNotInvoiced2 := SalesShipmentLine."Quantity2" - SalesShipmentLine.QtyInvoiced2;
+    end;
 }
