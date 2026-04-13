@@ -36,6 +36,7 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
         {
             Caption = 'Quantity Received 2';
             DataClassification = ToBeClassified;
+            TableRelation = "Purch. Rcpt. Line";
             DecimalPlaces = 0 : 5;
             Editable = false;
             BlankZero = true;
