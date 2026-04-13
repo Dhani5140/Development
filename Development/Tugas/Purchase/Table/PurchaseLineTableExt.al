@@ -60,10 +60,4 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             BlankZero = true;
         }
     }
-    trigger OnAfterModify()
-    var
-        myInt: Integer;
-    begin
-
-    end;
 }
