@@ -27,6 +27,8 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             DecimalPlaces = 0 : 5;
             trigger OnValidate()
             begin
+                if QtytoReceive2 > Quantity2 then
+                    Error('Qty. to Receive cannot be greater than Quantity.');
                 "QtyToInvoice2" := QtytoReceive2 + QtyReceived2;
             end;
         }
@@ -36,12 +38,18 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
             Editable = false;
+            BlankZero = true;
         }
         field(70004; QtyToInvoice2; Decimal)
         {
             Caption = 'Qty. to Invoice 2';
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
+            trigger OnValidate()
+            begin
+                if QtyToInvoice2 > Quantity2 then
+                    Error('Qty. to Invoice cannot be greater than Quantity.');
+            end;
         }
         field(70005; QtyInvoiced2; Decimal)
         {
@@ -49,6 +57,7 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
             Editable = false;
+            BlankZero = true;
         }
     }
     trigger OnAfterModify()

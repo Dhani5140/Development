@@ -28,15 +28,15 @@ codeunit 70001 SalesCode
         TempSalesLine.Validate("QtytoShip2");
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 80, OnInsertShipmentLineOnAfterInitQuantityFields, '', false, false)]
-    local procedure InitiateShipmentLine(
-        var SalesLine: Record "Sales Line";
-        var xSalesLine: Record "Sales Line";
-        var SalesShptLine: Record "Sales Shipment Line")
-    begin
-        SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
-        SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2" - SalesShptLine."QtyInvoiced2";
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, 80, OnInsertShipmentLineOnAfterInitQuantityFields, '', false, false)]
+    // local procedure InitiateShipmentLine(
+    //     var SalesLine: Record "Sales Line";
+    //     var xSalesLine: Record "Sales Line";
+    //     var SalesShptLine: Record "Sales Shipment Line")
+    // begin
+    //     SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
+    //     SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2" - SalesShptLine."QtyInvoiced2";
+    // end;
 
     // [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLine, '', false, false)]
     // local procedure UpdateInvoicedQtyOnPurchRcptLine(
