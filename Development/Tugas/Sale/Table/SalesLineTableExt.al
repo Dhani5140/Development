@@ -25,6 +25,8 @@ tableextension 70004 "Sales Line Table Ext" extends "Sales Line"
             DecimalPlaces = 0 : 5;
             trigger OnValidate()
             begin
+                if QtytoShip2 > Quantity2 then
+                    Error('Qty. to Ship cannot be greater than Quantity.');
                 "QtyToInvoice2" := QtytoShip2 + QtyShipped2;
             end;
         }
@@ -33,12 +35,19 @@ tableextension 70004 "Sales Line Table Ext" extends "Sales Line"
             Caption = 'Qty. Shipped 2';
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
+            Editable = false;
+            BlankZero = true;
         }
         field(70004; QtyToInvoice2; Decimal)
         {
             Caption = 'Qty. to Invoice 2';
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
+            trigger OnValidate()
+            begin
+                if QtyToInvoice2 > QtytoShip2 then
+                    Error('Qty. to Invoice cannot be greater than Quantity to Ship.');
+            end;
         }
         field(70005; QtyInvoiced2; Decimal)
         {
@@ -46,6 +55,7 @@ tableextension 70004 "Sales Line Table Ext" extends "Sales Line"
             DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 5;
             Editable = false;
+            BlankZero = true;
         }
     }
 }

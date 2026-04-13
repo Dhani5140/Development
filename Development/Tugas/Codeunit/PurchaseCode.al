@@ -42,17 +42,17 @@ codeunit 70000 PurchaseCode
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2";
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforeUpdateInvoicedQtyOnPurchRcptLine', '', false, false)]
-    local procedure UpdateInvoicedQtyOnPurchRcptLine(
-    var PurchRcptLine: Record "Purch. Rcpt. Line";
-    var QtyToBeInvoiced: Decimal;
-    var QtyToBeInvoicedBase: Decimal;
-    CommitIsSupressed: Boolean;
-    var PurchInvHeader: Record "Purch. Inv. Header";
-    var PurchaseHeader: Record "Purchase Header";
-    var PurchaseLine: Record "Purchase Line")
-    begin
-        PurchRcptLine.QtyInvoiced2 := PurchRcptLine.QtyReceivedNotInvoiced2;
-        PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2" - PurchRcptLine.QtyInvoiced2;
-    end;
+    // [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforeUpdateInvoicedQtyOnPurchRcptLine', '', false, false)]
+    // local procedure UpdateInvoicedQtyOnPurchRcptLine(
+    // var PurchRcptLine: Record "Purch. Rcpt. Line";
+    // var QtyToBeInvoiced: Decimal;
+    // var QtyToBeInvoicedBase: Decimal;
+    // CommitIsSupressed: Boolean;
+    // var PurchInvHeader: Record "Purch. Inv. Header";
+    // var PurchaseHeader: Record "Purchase Header";
+    // var PurchaseLine: Record "Purchase Line")
+    // begin
+    //     PurchRcptLine.QtyInvoiced2 := PurchRcptLine.QtyReceivedNotInvoiced2;
+    //     PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2" - PurchRcptLine.QtyInvoiced2;
+    // end;
 }

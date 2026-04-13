@@ -47,8 +47,8 @@ tableextension 70000 "Purchase Line Table Ext" extends "Purchase Line"
             DecimalPlaces = 0 : 5;
             trigger OnValidate()
             begin
-                if QtyToInvoice2 > Quantity2 then
-                    Error('Qty. to Invoice cannot be greater than Quantity.');
+                if QtyToInvoice2 > QtytoReceive2 then
+                    Error('Qty. to Invoice cannot be greater than Quantity to Receive.');
             end;
         }
         field(70005; QtyInvoiced2; Decimal)
