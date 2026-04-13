@@ -36,6 +36,7 @@ codeunit 70001 SalesCode
     begin
         SalesShptLine."Quantity2" := SalesLine."QtytoShip2";
         SalesShptLine."QtyShippedNotInvoiced2" := SalesShptLine."Quantity2";
+        SalesShptLine."QtyInvoiced2" := 0;
     end;
 
     // [EventSubscriber(ObjectType::Codeunit, 80, OnBeforeUpdateInvoicedQtyOnShipmentLine, '', false, false)]
