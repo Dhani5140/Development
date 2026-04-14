@@ -26,23 +26,21 @@ codeunit 70000 PurchaseCode
         TempPurchaseLine.Validate("QtytoReceive2");
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnAfterPurchRcptLineInsert', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, 90, 'OnInsertReceiptLineOnAfterInitPurchRcptLine', '', false, false)]
     local procedure InitiatePurchRcptLine2(
-        PurchaseLine: Record "Purchase Line";
         var PurchRcptLine: Record "Purch. Rcpt. Line";
+        PurchLine: Record "Purchase Line";
         ItemLedgShptEntryNo: Integer;
-        WhseShip: Boolean;
-        WhseReceive: Boolean;
-        CommitIsSupressed: Boolean;
-        PurchInvHeader: Record "Purch. Inv. Header";
-        var TempTrackingSpecification: Record "Tracking Specification" temporary;
+        xPurchLine: Record "Purchase Line"; var
         PurchRcptHeader: Record "Purch. Rcpt. Header";
-        TempWhseRcptHeader: Record "Warehouse Receipt Header";
-        xPurchLine: Record "Purchase Line";
-        var TempPurchLineGlobal: Record "Purchase Line" temporary)
+        var CostBaseAmount: Decimal;
+        PostedWhseRcptHeader: Record "Posted Whse. Receipt Header";
+        WhseRcptHeader: Record "Warehouse Receipt Header";
+        var WhseRcptLine: Record "Warehouse Receipt Line")
     begin
-        PurchRcptLine."Quantity2" := xPurchLine."QtytoReceive2";
+        PurchRcptLine."Quantity2" := PurchLine."QtytoReceive2";
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2";
+        PurchRcptLine."QtyInvoiced2" := 0;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforeUpdateInvoicedQtyOnPurchRcptLine', '', false, false)]
