@@ -26,32 +26,35 @@ codeunit 70000 PurchaseCode
         TempPurchaseLine.Validate("QtytoReceive2");
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnInsertReceiptLineOnAfterInitPurchRcptLine', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, 90, 'OnAfterPurchRcptLineInsert', '', false, false)]
     local procedure InitiatePurchRcptLine2(
+        PurchaseLine: Record "Purchase Line";
         var PurchRcptLine: Record "Purch. Rcpt. Line";
-        PurchLine: Record "Purchase Line";
         ItemLedgShptEntryNo: Integer;
-        xPurchLine: Record "Purchase Line"; var
+        WhseShip: Boolean;
+        WhseReceive: Boolean;
+        CommitIsSupressed: Boolean;
+        PurchInvHeader: Record "Purch. Inv. Header";
+        var TempTrackingSpecification: Record "Tracking Specification" temporary;
         PurchRcptHeader: Record "Purch. Rcpt. Header";
-        var CostBaseAmount: Decimal;
-        PostedWhseRcptHeader: Record "Posted Whse. Receipt Header";
-        WhseRcptHeader: Record "Warehouse Receipt Header";
-        var WhseRcptLine: Record "Warehouse Receipt Line")
+        TempWhseRcptHeader: Record "Warehouse Receipt Header";
+        xPurchLine: Record "Purchase Line";
+        var TempPurchLineGlobal: Record "Purchase Line" temporary)
     begin
-        PurchRcptLine."Quantity2" := PurchLine."QtytoReceive2";
+        PurchRcptLine."Quantity2" := xPurchLine."QtytoReceive2";
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2";
-        PurchRcptLine."QtyInvoiced2" := 0;
+        PurchRcptLine.Modify()
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforeUpdateInvoicedQtyOnPurchRcptLine', '', false, false)]
     local procedure UpdateInvoicedQtyOnPurchRcptLine(
-    var PurchRcptLine: Record "Purch. Rcpt. Line";
-    var QtyToBeInvoiced: Decimal;
-    var QtyToBeInvoicedBase: Decimal;
-    CommitIsSupressed: Boolean;
-    var PurchInvHeader: Record "Purch. Inv. Header";
-    var PurchaseHeader: Record "Purchase Header";
-    var PurchaseLine: Record "Purchase Line")
+        var PurchRcptLine: Record "Purch. Rcpt. Line";
+        var QtyToBeInvoiced: Decimal;
+        var QtyToBeInvoicedBase: Decimal;
+        CommitIsSupressed: Boolean;
+        var PurchInvHeader: Record "Purch. Inv. Header";
+        var PurchaseHeader: Record "Purchase Header";
+        var PurchaseLine: Record "Purchase Line")
     begin
         PurchRcptLine.QtyInvoiced2 := PurchRcptLine.QtyReceivedNotInvoiced2;
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2" - PurchRcptLine.QtyInvoiced2;
