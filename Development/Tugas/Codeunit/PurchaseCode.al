@@ -43,7 +43,6 @@ codeunit 70000 PurchaseCode
     begin
         PurchRcptLine."Quantity2" := xPurchLine."QtytoReceive2";
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2";
-        PurchRcptLine.Modify()
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforeUpdateInvoicedQtyOnPurchRcptLine', '', false, false)]
