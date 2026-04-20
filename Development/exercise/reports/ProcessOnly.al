@@ -3,6 +3,7 @@ report 70001 ProcessOnly
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     ProcessingOnly = true;
+    Caption = 'ProcessOnly';
 
     dataset
     {
