@@ -61,3 +61,5 @@ codeunit 70000 PurchaseCode
         PurchRcptLine.QtyReceivedNotInvoiced2 := PurchRcptLine."Quantity2" - PurchRcptLine.QtyInvoiced2;
     end;
 }
+
+// this is a test
